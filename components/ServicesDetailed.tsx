@@ -293,12 +293,11 @@ export default function ServicesDetailed() {
         <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
           <img src="/images/BG.jpg" alt="Parallax Background" className="w-full h-full object-cover" draggable={false} />
         </div>
-
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50 z-10" />
 
         {/* Rows — Bound to start strictly below the title area, preventing top overflow */}
-        <div ref={parentRef} className="absolute top-[160px] sm:top-[200px] md:top-[220px] bottom-0 left-0 right-0 z-20 flex flex-col justify-end pb-4 sm:pb-6 gap-4 sm:gap-6 cursor-grab active:cursor-grabbing">
+        <div ref={parentRef} className="absolute top-[40px] sm:top-[200px] md:top-[220px] bottom-0 left-0 right-0 z-20 flex flex-col justify-center sm:justify-end pb-4 sm:pb-6 gap-12 sm:gap-6 cursor-grab active:cursor-grabbing">
 
           {/* Middle Row (top): images 5, 6, 7, 8 — 2 images visible at a time */}
           <div ref={middleRowRef} className="w-full overflow-hidden flex-shrink-0 py-3">
@@ -306,7 +305,7 @@ export default function ServicesDetailed() {
               {[5, 6, 7, 8, 5, 6, 7, 8].map((n, i) => (
                 <div key={`r2-${i}`} style={{ flexShrink: 0, paddingRight: "50vw" }}>
                   <img src={`/images/Infinite Marquee/${n}.jpg`} alt={`Work ${n}`}
-                    className="h-28 sm:h-36 md:h-44 w-auto object-contain rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.3),_0_0_15px_rgba(139,159,254,0.2)] transition-all duration-300 ease-out hover:scale-105 cursor-grab active:cursor-grabbing hover:shadow-[0_12px_40px_rgba(0,0,0,0.4),_0_0_25px_rgba(139,159,254,0.6)]"
+                    className="h-40 sm:h-36 md:h-44 w-auto object-contain rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.3),_0_0_15px_rgba(139,159,254,0.2)] transition-all duration-300 ease-out hover:scale-105 cursor-grab active:cursor-grabbing hover:shadow-[0_12px_40px_rgba(0,0,0,0.4),_0_0_25px_rgba(139,159,254,0.6)]"
                     draggable={false} />
                 </div>
               ))}
@@ -319,7 +318,7 @@ export default function ServicesDetailed() {
               {[9, 10, 11, 9, 10, 11, 9, 11].map((n, i) => (
                 <div key={`r3-${i}`} style={{ flexShrink: 0, paddingRight: "20vw" }}>
                   <img src={`/images/Infinite Marquee/${n}.jpg`} alt={`Work ${n}`}
-                    className="h-28 sm:h-36 md:h-44 w-auto object-contain rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.3),_0_0_15px_rgba(139,159,254,0.2)] transition-all duration-300 ease-out hover:scale-105 cursor-grab active:cursor-grabbing hover:shadow-[0_12px_40px_rgba(0,0,0,0.4),_0_0_25px_rgba(139,159,254,0.6)]"
+                    className="h-40 sm:h-36 md:h-44 w-auto object-contain rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.3),_0_0_15px_rgba(139,159,254,0.2)] transition-all duration-300 ease-out hover:scale-105 cursor-grab active:cursor-grabbing hover:shadow-[0_12px_40px_rgba(0,0,0,0.4),_0_0_25px_rgba(139,159,254,0.6)]"
                     draggable={false} />
                 </div>
               ))}
@@ -329,8 +328,8 @@ export default function ServicesDetailed() {
         </div>
 
         {/* Title — top-left */}
-        <div className="absolute top-1 sm:top-2 md:top-2 left-4 sm:left-10 lg:left-20 z-30 select-none">
-          <h2 className="flex flex-row flex-nowrap items-center whitespace-nowrap font-serif text-[2.8vw] sm:text-base md:text-xl lg:text-2xl text-white/90 leading-none tracking-wide">
+        <div className="absolute top-6 sm:top-2 md:top-2 left-4 sm:left-10 lg:left-20 z-30 select-none">
+          <h2 className="flex flex-row flex-nowrap items-center whitespace-nowrap font-serif text-[4.5vw] sm:text-base md:text-xl lg:text-2xl text-white/90 leading-none tracking-wide">
             <span>we</span>
             <span className="relative flex items-center justify-center w-4 h-4 sm:w-7 sm:h-7 mx-1 sm:mx-2">
               <div className="absolute w-4 h-4 sm:w-6 sm:h-6 bg-[#8b9ffe] rounded-full blur-[5px] opacity-80" />
