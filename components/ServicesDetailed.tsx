@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useRef, useEffect } from "react";
+import NumbersSection from "@/components/NumbersSection";
+import FinancialPerformance from "@/components/FinancialPerformance";
+import FoundersDetailed from "@/components/FoundersDetailed";
 
 export default function ServicesDetailed() {
   const middleRowRef = useRef<HTMLDivElement>(null);
@@ -207,18 +210,8 @@ export default function ServicesDetailed() {
   return (
     <section id="services-detailed" className="relative w-full bg-[#e6e6e6] pt-0 pb-0 flex flex-col items-center justify-center overflow-hidden">
 
-      {/* Co-Founders Full Width Image Showcase */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-150px" }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full relative select-none"
-      >
-        <img src="/images/Co-Founders.png" alt="Co-Founders Portfolio Showcase" className="w-full h-auto object-cover" draggable={false} />
-        <div className="absolute top-0 left-0 right-0 h-20 sm:h-36 md:h-44 bg-gradient-to-b from-white to-transparent pointer-events-none z-10" />
-        <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-16 md:h-24 bg-gradient-to-t from-[#e6e6e6] via-[#e6e6e6]/85 to-transparent pointer-events-none z-10" />
-      </motion.div>
+      <NumbersSection />
+      <FinancialPerformance />
 
       {/* Header Section */}
       <div className="flex flex-col items-center w-full max-w-4xl px-6 select-none my-16 md:my-24">
@@ -264,25 +257,68 @@ export default function ServicesDetailed() {
         </motion.div>
       </div>
 
-      {/* Dhivya Krishna Showcase */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-150px" }} transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full relative select-none"
-      >
-        <img src="/images/DhivyaKrishna.png" alt="Dhivya Krishna Portfolio Showcase" className="w-full h-auto object-cover" draggable={false} />
-        <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-16 md:h-24 bg-gradient-to-t from-[#e6e6e6] to-transparent pointer-events-none z-10" />
-      </motion.div>
+      {/* Founders Detailed Showcase Section */}
+      <FoundersDetailed />
 
-      {/* Prabu Saravanan Showcase */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-150px" }} transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full relative select-none"
-      >
-        <img src="/images/PrabuSaravanan.png" alt="Prabu Saravanan Portfolio Showcase" className="w-full h-auto object-cover" draggable={false} />
-        <div className="absolute top-0 left-0 right-0 h-10 sm:h-16 md:h-24 bg-gradient-to-b from-[#e6e6e6] to-transparent pointer-events-none z-10" />
-      </motion.div>
+      {/* Brands X DP Infinite Running Logos Section */}
+      <div className="w-full bg-white py-8 sm:py-14 flex flex-col items-center justify-center overflow-hidden border-t border-b border-gray-100 select-none relative z-20">
+        
+        {/* Ambient Glowing Blobs */}
+        <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full bg-brand-purple/5 blur-[90px] pointer-events-none" />
+        <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full bg-brand-accent2/5 blur-[90px] pointer-events-none" />
+
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-center text-center px-4 mb-6 sm:mb-10 z-10"
+        >
+          <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-dark tracking-wide leading-none">
+            BRANDS <span className="text-brand-purple font-sans font-light opacity-80">X</span> DP
+          </h2>
+        </motion.div>
+
+        {/* Continuous Right-to-Left Infinite Running Brand Logos Marquee */}
+        <div className="w-full overflow-hidden relative py-4">
+          {/* Gradient Blur Overlays on sides for smooth fade in/out */}
+          <div className="absolute top-0 bottom-0 left-0 w-20 sm:w-36 md:w-56 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-20 sm:w-36 md:w-56 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
+
+          {/* Marquee Track */}
+          <div className="animate-marquee-rtl flex items-center space-x-6 sm:space-x-10 md:space-x-12">
+            {[...Array(44)].map((_, i) => (
+              <div
+                key={`b1-${i}`}
+                className="flex-shrink-0 w-28 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(91,46,255,0.12)] hover:border-brand-purple/30 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 transform hover:scale-105 group"
+              >
+                <img
+                  src={`/images/brands/${i + 1}.png`}
+                  alt={`Brand ${i + 1}`}
+                  className="max-h-full max-w-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300"
+                  draggable={false}
+                />
+              </div>
+            ))}
+            {/* Duplicated 44 images for seamless infinite 0% -> -50% loop */}
+            {[...Array(44)].map((_, i) => (
+              <div
+                key={`b2-${i}`}
+                className="flex-shrink-0 w-28 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(91,46,255,0.12)] hover:border-brand-purple/30 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 transform hover:scale-105 group"
+              >
+                <img
+                  src={`/images/brands/${i + 1}.png`}
+                  alt={`Brand ${i + 1}`}
+                  className="max-h-full max-w-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300"
+                  draggable={false}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
 
       {/* Parallax Window — BG.jpg fixed behind, 2 marquee rows both scrolling right→left simultaneously */}
       <div

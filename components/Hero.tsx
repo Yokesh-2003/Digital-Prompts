@@ -1,9 +1,23 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.loop = true;
+      videoRef.current.play().catch(() => {
+        // Handle potential autoplay restrictions
+      });
+    }
+  }, []);
+
   // Heading animation variants
   const containerVariants = {
     hidden: {},
@@ -38,8 +52,6 @@ export default function Hero() {
     },
   };
 
-
-
   return (
     <section
       id="home"
@@ -48,10 +60,15 @@ export default function Hero() {
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          onEnded={(e) => {
+            e.currentTarget.currentTime = 0;
+            e.currentTarget.play().catch(() => {});
+          }}
           className="w-full h-full object-cover opacity-[0.28]"
         >
           <source src="/images/hero.mp4" type="video/mp4" />

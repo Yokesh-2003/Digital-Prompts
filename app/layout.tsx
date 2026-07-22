@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue, Playfair_Display } from "next/font/google";
 import "@/styles/globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
       >
         <div className="noise-overlay" aria-hidden="true" />
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

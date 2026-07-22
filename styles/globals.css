@@ -177,3 +177,24 @@
     0 0.4rem 0.5rem -0.3rem rgba(0, 0, 0, 0.3);
 }
 
+/* Right-to-Left Infinite Running Brand Logos Marquee */
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-rtl {
+  display: flex;
+  width: max-content;
+  animation: marquee-rtl 95s linear infinite;
+}
+
+.animate-marquee-rtl:hover {
+  animation-play-state: paused;
+}
+
+

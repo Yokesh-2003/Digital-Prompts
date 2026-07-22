@@ -21,11 +21,6 @@ export default function Footer() {
           {/* Left Column (Span 5) */}
           <div className="col-span-5 flex flex-col justify-between">
             <div>
-              {/* Hashtag watermark */}
-              <span className="font-heading text-[2.5vw] sm:text-xs md:text-sm lg:text-base text-gray-500 tracking-widest uppercase block mb-6 sm:mb-10 select-none">
-                #DIGITALPROMPTS
-              </span>
-
               {/* Styled strategy proposal block */}
               <div className="flex flex-col space-y-1 sm:space-y-1.5 select-none">
                 <p className="font-serif text-[4vw] sm:text-2xl md:text-3xl lg:text-4.5xl xl:text-5.5xl text-white leading-tight">
