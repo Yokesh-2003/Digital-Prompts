@@ -10,7 +10,7 @@ export default function Hero() {
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true; 
+      videoRef.current.muted = true;  
       videoRef.current.loop = true;
       videoRef.current.play().catch(() => {
         // Handle potential autoplay restrictions
