@@ -66,20 +66,20 @@ export default function CollabsAndCampaigns() {
             COLLABS <span className="font-sans font-light text-brand-purple">X</span> DP
           </motion.h2>
 
-          {/* Partner Circular Badges Marquee / Row */}
-          <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-6 md:gap-8">
-            {[...Array(9)].map((_, i) => (
+          {/* Partner Circular Badges Grid (All 44 Brand Logos) */}
+          <div className="flex flex-wrap items-center justify-start gap-3 sm:gap-5 md:gap-6">
+            {[...Array(44)].map((_, i) => (
               <motion.div
                 key={`collab-${i}`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                whileHover={{ scale: 1.08, y: -4 }}
-                className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-white border border-gray-200 shadow-[0_6px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_30px_rgba(91,46,255,0.2)] hover:border-brand-purple/40 p-2 sm:p-3 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                transition={{ duration: 0.3, delay: (i % 15) * 0.03 }}
+                whileHover={{ scale: 1.1, y: -4 }}
+                className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-white border border-gray-200 shadow-[0_4px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_25px_rgba(91,46,255,0.2)] hover:border-brand-purple/40 p-2 sm:p-2.5 flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <img
-                  src={`/images/brands/${(i % 12) + 1}.png`}
+                  src={`/images/brands/${i + 1}.png`}
                   alt={`Collab partner ${i + 1}`}
                   className="max-h-full max-w-full object-contain rounded-full"
                   draggable={false}
@@ -91,21 +91,21 @@ export default function CollabsAndCampaigns() {
 
 
         {/* SUBSECTION 2: CAMPAIGNS */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-4">
+        <div className="grid grid-cols-12 gap-3 sm:gap-8 lg:gap-12 items-start pt-4">
           
           {/* Left Column: Campaigns Title & Bullet List */}
-          <div className="lg:col-span-9 flex flex-col space-y-8">
+          <div className="col-span-8 sm:col-span-9 flex flex-col space-y-4 sm:space-y-8">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-6xl md:text-7xl font-serif text-[#061245] tracking-tight font-medium text-left"
+              className="text-3xl sm:text-6xl md:text-7xl font-serif text-[#061245] tracking-tight font-medium text-left"
             >
               CAMPAIGNS
             </motion.h2>
 
-            <ul className="space-y-4">
+            <ul className="space-y-3 sm:space-y-4">
               {CAMPAIGNS_LIST.map((item, idx) => (
                 <motion.li
                   key={idx}
@@ -113,10 +113,10 @@ export default function CollabsAndCampaigns() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.06 }}
-                  className="flex items-start space-x-3 group cursor-pointer"
+                  className="flex items-start space-x-2 sm:space-x-3 group cursor-pointer"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#061245] mt-2 flex-shrink-0 group-hover:bg-brand-purple group-hover:scale-125 transition-all duration-200" />
-                  <span className="text-sm sm:text-base md:text-lg font-medium text-gray-800 leading-relaxed font-sans group-hover:text-brand-purple transition-colors duration-200">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#061245] mt-1.5 sm:mt-2 flex-shrink-0 group-hover:bg-brand-purple group-hover:scale-125 transition-all duration-200" />
+                  <span className="text-xs sm:text-base md:text-lg font-medium text-gray-800 leading-snug sm:leading-relaxed font-sans group-hover:text-brand-purple transition-colors duration-200">
                     {item}
                   </span>
                 </motion.li>
@@ -124,17 +124,19 @@ export default function CollabsAndCampaigns() {
             </ul>
           </div>
 
-          {/* Right Column: Campaign Partner Badges */}
-          <div className="lg:col-span-3 flex lg:flex-col items-center justify-start gap-4 sm:gap-6 pt-4 lg:pt-16">
-            {[10, 11, 12].map((n, idx) => (
+          {/* Right Column: Campaign Partner Badges (3 logos on desktop, 5 logos on mobile) */}
+          <div className="col-span-4 sm:col-span-3 flex flex-col items-center justify-start gap-3 sm:gap-6 pt-6 sm:pt-16">
+            {[10, 11, 12, 13, 14].map((n, idx) => (
               <motion.div
                 key={`camp-partner-${idx}`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
+                transition={{ duration: 0.4, delay: 0.2 + idx * 0.08 }}
                 whileHover={{ scale: 1.08, y: -3 }}
-                className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-white border border-gray-200 shadow-[0_6px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_30px_rgba(91,46,255,0.2)] p-2.5 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className={`w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-white border border-gray-200 shadow-[0_6px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_30px_rgba(91,46,255,0.2)] p-2 sm:p-2.5 flex items-center justify-center transition-all duration-300 cursor-pointer ${
+                  idx >= 3 ? "flex sm:hidden" : "flex"
+                }`}
               >
                 <img
                   src={`/images/brands/${n}.png`}

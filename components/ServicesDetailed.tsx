@@ -280,17 +280,17 @@ export default function ServicesDetailed() {
           </h2>
         </motion.div>
 
-        {/* Continuous Right-to-Left Infinite Running Brand Logos Marquee */}
-        <div className="w-full overflow-hidden relative py-4">
+        {/* Continuous 3-Row Alternating Infinite Running Brand Logos Marquee */}
+        <div className="w-full overflow-hidden relative py-4 flex flex-col space-y-4 sm:space-y-6">
           {/* Gradient Blur Overlays on sides for smooth fade in/out */}
           <div className="absolute top-0 bottom-0 left-0 w-20 sm:w-36 md:w-56 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />
           <div className="absolute top-0 bottom-0 right-0 w-20 sm:w-36 md:w-56 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
 
-          {/* Marquee Track */}
+          {/* Row 1: Right-to-Left (Brands 1-15) */}
           <div className="animate-marquee-rtl flex items-center space-x-6 sm:space-x-10 md:space-x-12">
-            {[...Array(44)].map((_, i) => (
+            {[...Array(15)].map((_, i) => (
               <div
-                key={`b1-${i}`}
+                key={`r1-a-${i}`}
                 className="flex-shrink-0 w-28 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(91,46,255,0.12)] hover:border-brand-purple/30 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 transform hover:scale-105 group"
               >
                 <img
@@ -301,15 +301,74 @@ export default function ServicesDetailed() {
                 />
               </div>
             ))}
-            {/* Duplicated 44 images for seamless infinite 0% -> -50% loop */}
-            {[...Array(44)].map((_, i) => (
+            {[...Array(15)].map((_, i) => (
               <div
-                key={`b2-${i}`}
+                key={`r1-b-${i}`}
                 className="flex-shrink-0 w-28 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(91,46,255,0.12)] hover:border-brand-purple/30 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 transform hover:scale-105 group"
               >
                 <img
                   src={`/images/brands/${i + 1}.png`}
                   alt={`Brand ${i + 1}`}
+                  className="max-h-full max-w-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300"
+                  draggable={false}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2: Left-to-Right (Brands 16-30) */}
+          <div className="animate-marquee-ltr flex items-center space-x-6 sm:space-x-10 md:space-x-12">
+            {[...Array(15)].map((_, i) => (
+              <div
+                key={`r2-a-${i}`}
+                className="flex-shrink-0 w-28 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(91,46,255,0.12)] hover:border-brand-purple/30 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 transform hover:scale-105 group"
+              >
+                <img
+                  src={`/images/brands/${i + 16}.png`}
+                  alt={`Brand ${i + 16}`}
+                  className="max-h-full max-w-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300"
+                  draggable={false}
+                />
+              </div>
+            ))}
+            {[...Array(15)].map((_, i) => (
+              <div
+                key={`r2-b-${i}`}
+                className="flex-shrink-0 w-28 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(91,46,255,0.12)] hover:border-brand-purple/30 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 transform hover:scale-105 group"
+              >
+                <img
+                  src={`/images/brands/${i + 16}.png`}
+                  alt={`Brand ${i + 16}`}
+                  className="max-h-full max-w-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300"
+                  draggable={false}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Row 3: Right-to-Left (Brands 31-44) */}
+          <div className="animate-marquee-rtl flex items-center space-x-6 sm:space-x-10 md:space-x-12">
+            {[...Array(14)].map((_, i) => (
+              <div
+                key={`r3-a-${i}`}
+                className="flex-shrink-0 w-28 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(91,46,255,0.12)] hover:border-brand-purple/30 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 transform hover:scale-105 group"
+              >
+                <img
+                  src={`/images/brands/${i + 31}.png`}
+                  alt={`Brand ${i + 31}`}
+                  className="max-h-full max-w-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300"
+                  draggable={false}
+                />
+              </div>
+            ))}
+            {[...Array(14)].map((_, i) => (
+              <div
+                key={`r3-b-${i}`}
+                className="flex-shrink-0 w-28 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(91,46,255,0.12)] hover:border-brand-purple/30 p-3 sm:p-4 flex items-center justify-center transition-all duration-300 transform hover:scale-105 group"
+              >
+                <img
+                  src={`/images/brands/${i + 31}.png`}
+                  alt={`Brand ${i + 31}`}
                   className="max-h-full max-w-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300"
                   draggable={false}
                 />

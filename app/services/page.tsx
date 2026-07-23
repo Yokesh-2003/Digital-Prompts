@@ -100,8 +100,8 @@ export default function ServicesPage() {
             </h1>
           </motion.div>
 
-          {/* 3 Pillar Cards with Large 3D Gradient Arrows Below */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 md:gap-8 items-end relative pt-8">
+          {/* 3 Pillar Cards with Large 3D Gradient Arrows Below (3 Columns on both Mobile & PC) */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-8 items-end relative pt-4 sm:pt-8">
 
             {/* PILLAR 1: TIMELY DELIVERY */}
             <motion.div
@@ -112,24 +112,24 @@ export default function ServicesPage() {
               className="flex flex-col items-center text-center group"
             >
               {/* Text Container Above Arrow */}
-              <div className="mb-6 min-h-[140px] flex flex-col items-center justify-center px-4">
-                <h3 className="font-bold text-lg sm:text-xl text-[#061245] uppercase tracking-wider mb-2">
+              <div className="mb-3 sm:mb-6 min-h-[100px] sm:min-h-[140px] flex flex-col items-center justify-center px-1 sm:px-4">
+                <h3 className="font-bold text-xs sm:text-lg md:text-xl text-[#061245] uppercase tracking-wider mb-1 sm:mb-2">
                   TIMELY DELIVERY
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed max-w-xs font-normal">
+                <p className="text-[10px] sm:text-xs md:text-sm text-gray-700 leading-tight sm:leading-relaxed max-w-xs font-normal">
                   We do not take advantage of time, and we take responsibility for what we say.
                 </p>
               </div>
 
               {/* 3D Arrow Pillar (Left Angled) */}
               <div className="w-full flex justify-center relative">
-                <div className="relative w-44 sm:w-52 h-44 sm:h-52 bg-gradient-to-t from-[#060836] via-[#17178a] to-[#3b3bf7] rounded-2xl shadow-[0_20px_40px_rgba(6,18,69,0.3)] transform -rotate-12 group-hover:scale-105 group-hover:-rotate-6 transition-all duration-300 flex items-center justify-center border border-white/30 overflow-hidden">
+                <div className="relative w-24 sm:w-44 md:w-52 h-24 sm:h-44 md:h-52 bg-gradient-to-t from-[#060836] via-[#17178a] to-[#3b3bf7] rounded-xl sm:rounded-2xl shadow-[0_10px_25px_rgba(6,18,69,0.3)] transform -rotate-12 group-hover:scale-105 group-hover:-rotate-6 transition-all duration-300 flex items-center justify-center border border-white/30 overflow-hidden">
                   
                   {/* Arrow Point Triangle on top */}
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[30px] border-b-[#3b3bf7]" />
+                  <div className="absolute -top-3 sm:-top-6 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[15px] sm:border-l-[30px] border-l-transparent border-r-[15px] sm:border-r-[30px] border-r-transparent border-b-[15px] sm:border-b-[30px] border-b-[#3b3bf7]" />
                   
                   {/* Icon */}
-                  <Clock className="w-12 h-12 sm:w-16 sm:h-16 text-white drop-shadow-md relative z-10" />
+                  <Clock className="w-6 h-6 sm:w-12 md:w-16 text-white drop-shadow-md relative z-10" />
                 </div>
               </div>
             </motion.div>
@@ -143,32 +143,32 @@ export default function ServicesPage() {
               className="flex flex-col items-center text-center group z-20"
             >
               {/* Text Container Above Arrow with Green Hand-Drawn Ring Highlight */}
-              <div className="mb-6 min-h-[140px] flex flex-col items-center justify-center px-4 relative">
+              <div className="mb-3 sm:mb-6 min-h-[100px] sm:min-h-[140px] flex flex-col items-center justify-center px-1 sm:px-4 relative">
                 
                 {/* Hand-Drawn Green Ring Overlay around Common Sense */}
-                <div className="relative px-6 py-2.5 border-2 border-emerald-400 rounded-[999px] shadow-[0_0_20px_rgba(52,211,153,0.35)] bg-emerald-50/80 mb-2">
-                  <h3 className="font-bold text-lg sm:text-xl text-[#061245] uppercase tracking-wider">
+                <div className="relative px-2 py-1 sm:px-6 sm:py-2.5 border sm:border-2 border-emerald-400 rounded-[999px] shadow-[0_0_15px_rgba(52,211,153,0.35)] bg-emerald-50/80 mb-1 sm:mb-2">
+                  <h3 className="font-bold text-xs sm:text-lg md:text-xl text-[#061245] uppercase tracking-wider">
                     COMMON SENSE
                   </h3>
-                  <span className="text-xs sm:text-sm font-semibold text-emerald-700 block">
+                  <span className="text-[9px] sm:text-xs md:text-sm font-semibold text-emerald-700 block whitespace-nowrap">
                     Yes, we have that!
                   </span>
                 </div>
 
-                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed max-w-xs font-normal">
+                <p className="text-[10px] sm:text-xs md:text-sm text-gray-700 leading-tight sm:leading-relaxed max-w-xs font-normal">
                   Too much explanation is not required, but we will ask a lot of questions to understand what you want.
                 </p>
               </div>
 
               {/* 3D Arrow Pillar (Center Vertical Straight) */}
               <div className="w-full flex justify-center relative">
-                <div className="relative w-48 sm:w-56 h-48 sm:h-56 bg-gradient-to-t from-[#090325] via-brand-purple to-purple-500 rounded-2xl shadow-[0_25px_50px_rgba(91,46,255,0.4)] group-hover:scale-105 transition-all duration-300 flex items-center justify-center border border-white/40 overflow-hidden">
+                <div className="relative w-28 sm:w-48 md:w-56 h-28 sm:h-48 md:h-56 bg-gradient-to-t from-[#090325] via-brand-purple to-purple-500 rounded-xl sm:rounded-2xl shadow-[0_15px_35px_rgba(91,46,255,0.4)] group-hover:scale-105 transition-all duration-300 flex items-center justify-center border border-white/40 overflow-hidden">
                   
                   {/* Arrow Point Triangle on top */}
-                  <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[35px] border-l-transparent border-r-[35px] border-r-transparent border-b-[35px] border-b-purple-500" />
+                  <div className="absolute -top-3.5 sm:-top-7 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[18px] sm:border-l-[35px] border-l-transparent border-r-[18px] sm:border-r-[35px] border-r-transparent border-b-[18px] sm:border-b-[35px] border-b-purple-500" />
                   
                   {/* Icon */}
-                  <MessageSquare className="w-14 h-14 sm:w-20 sm:h-20 text-white drop-shadow-md relative z-10" />
+                  <MessageSquare className="w-7 h-7 sm:w-14 md:w-20 text-white drop-shadow-md relative z-10" />
                 </div>
               </div>
             </motion.div>
@@ -182,24 +182,24 @@ export default function ServicesPage() {
               className="flex flex-col items-center text-center group"
             >
               {/* Text Container Above Arrow */}
-              <div className="mb-6 min-h-[140px] flex flex-col items-center justify-center px-4">
-                <h3 className="font-bold text-lg sm:text-xl text-[#061245] uppercase tracking-wider mb-2">
+              <div className="mb-3 sm:mb-6 min-h-[100px] sm:min-h-[140px] flex flex-col items-center justify-center px-1 sm:px-4">
+                <h3 className="font-bold text-xs sm:text-lg md:text-xl text-[#061245] uppercase tracking-wider mb-1 sm:mb-2">
                   QUALITY
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed max-w-xs font-normal">
+                <p className="text-[10px] sm:text-xs md:text-sm text-gray-700 leading-tight sm:leading-relaxed max-w-xs font-normal">
                   Despite other factors, we make sure to maintain the quality.
                 </p>
               </div>
 
               {/* 3D Arrow Pillar (Right Angled) */}
               <div className="w-full flex justify-center relative">
-                <div className="relative w-44 sm:w-52 h-44 sm:h-52 bg-gradient-to-t from-[#060836] via-[#17178a] to-[#3b3bf7] rounded-2xl shadow-[0_20px_40px_rgba(6,18,69,0.3)] transform rotate-12 group-hover:scale-105 group-hover:rotate-6 transition-all duration-300 flex items-center justify-center border border-white/30 overflow-hidden">
+                <div className="relative w-24 sm:w-44 md:w-52 h-24 sm:h-44 md:h-52 bg-gradient-to-t from-[#060836] via-[#17178a] to-[#3b3bf7] rounded-xl sm:rounded-2xl shadow-[0_10px_25px_rgba(6,18,69,0.3)] transform rotate-12 group-hover:scale-105 group-hover:rotate-6 transition-all duration-300 flex items-center justify-center border border-white/30 overflow-hidden">
                   
                   {/* Arrow Point Triangle on top */}
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[30px] border-b-[#3b3bf7]" />
+                  <div className="absolute -top-3 sm:-top-6 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[15px] sm:border-l-[30px] border-l-transparent border-r-[15px] sm:border-r-[30px] border-r-transparent border-b-[15px] sm:border-b-[30px] border-b-[#3b3bf7]" />
                   
                   {/* Icon */}
-                  <Award className="w-12 h-12 sm:w-16 sm:h-16 text-white drop-shadow-md relative z-10" />
+                  <Award className="w-6 h-6 sm:w-12 md:w-16 text-white drop-shadow-md relative z-10" />
                 </div>
               </div>
             </motion.div>
