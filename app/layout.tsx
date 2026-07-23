@@ -27,6 +27,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Digital Prompts | Creative Digital Agency",
   description: "We build digital experiences that people remember. Premium websites, brands, and digital products with cinematic interactions.",
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   metadataBase: new URL("https://digitalprompts.agency"),
   openGraph: {
     title: "Digital Prompts | Creative Digital Agency",
